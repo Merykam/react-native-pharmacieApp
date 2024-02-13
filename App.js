@@ -5,7 +5,11 @@ import img from './assets/3.jpg'
 import { useState } from 'react';
 import { TextInput } from 'react-native';
 
+
 export default function App() {
+  
+
+
   const image = {uri: './assets/2.jpg'};
   const [componentChange, setcomponentChange]= useState("");
   const toggle = (value)=>{
@@ -103,8 +107,7 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover",
   
-    
-    // justifyContent: "center",
+  
    
    
     

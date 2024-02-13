@@ -8,7 +8,7 @@ export default function Custominput({value, setValue, placeholder, secureTextEnt
   return (
     <View style={styles.container}>
 
-      <TextInput secureTextEntry={secureTextEntry} type="password" value={value} onChange={setValue} style={styles.input} placeholder= {placeholder} />
+      <TextInput   />
     
     </View>
   );
