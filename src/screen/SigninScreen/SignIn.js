@@ -14,7 +14,7 @@ export default function SignIn() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signin', formData);
+      const response = await axios.post('http://10.0.2.2/:5000/api/auth/signin', formData);
       console.log(response.data);
     } catch (error) {
       console.error(error);

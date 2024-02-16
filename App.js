@@ -4,6 +4,7 @@ import SignIn from './src/screen/SigninScreen/SignIn';
 import img from './assets/3.jpg'
 import { useState } from 'react';
 import { TextInput } from 'react-native';
+import Pharmacies from './src/components/pharmacies';
 
 
 export default function App() {
@@ -24,19 +25,19 @@ export default function App() {
         style={styles.backgroundImage}
         >
          
-        {/* <SignIn/> */}
         <View style={styles.loginContainer}><Text style={styles.login} onPress={()=>{toggle("login")}}>Login</Text></View>
         {componentChange == "login"?<View style={styles.container}><SignIn/></View>  : ""}
-        {componentChange == "" ?     <View style={styles.container0}>
-        <View style={styles.container1}>
-          <View style={styles.container}>
-
-          <TextInput  style={styles.input} placeholder= "search pharmacie" />
-          <View style={styles.loginContainer}><Text style={styles.login} >Search</Text></View>
-
-          </View>
-        </View>
-        </View> : ""}
+        {componentChange == "" ? 
+        <View style={styles.pharmacie}>
+          <Text style={styles.pharmacieText}>Pharm<Text style={styles.gard}>Gard</Text></Text>
+          <Text style={styles.welcomeMsg}>Find pharmacies near you more easily with pharmGard.</Text>
+          
+        <View><Text style={styles.started}  onPress={()=>{toggle("pharmacies")}}>Get started</Text></View>
+          </View>:""}
+          
+       
+       {componentChange == "pharmacies"? <Pharmacies></Pharmacies>:""}
+       
     
        
       </ImageBackground>
@@ -46,6 +47,35 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  started:{
+    padding:17,
+    color:"white",
+    fontSize:24,
+    backgroundColor:"#0b4e48",
+    borderRadius:12,
+  
+
+  },
+  welcomeMsg: {
+    marginVertical:15,
+    fontSize:18,
+    textAlign:"center"
+  },
+  pharmacie:{
+    width:"100%",
+    alignItems:"center",
+    marginVertical:200
+
+  },
+  pharmacieText:{
+    fontSize:50,
+    fontWeight:"bold",
+   
+
+  },
+  gard:{
+    color: "#158379",
+  },
   container0:{
     width:"100%",
     alignItems:"center",
@@ -93,11 +123,11 @@ const styles = StyleSheet.create({
   },
   
   login:{
-    padding:4,
+    padding:6,
     color:"white",
     fontSize:24,
     fontWeight:"bold",
-    backgroundColor:"#288A81",
+    backgroundColor:"#0b4e48",
     textAlign:"center",
     borderRadius:12,
     width:90
@@ -107,9 +137,6 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover",
   
-  
-   
-   
     
   },
 });
